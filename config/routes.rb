@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
+  get 'signup', to: 'users#new'
   root to: 'tasks#index'
-  resources :users, only: [:new, :create]
+  resources :users, only: [:create]
   resources :tasks
 end
